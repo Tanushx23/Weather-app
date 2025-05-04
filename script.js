@@ -29,16 +29,17 @@ cityInput.addEventListener('keydown',(event)=>{
 	}
 });
 
-function getWeatherIcon(id){
-	if (id <= 232) return 'thunderstorm.svg'
-	if (id <= 321) return 'drizzles.svg'
-	if (id <= 531) return 'rain.svg'
-	if (id <= 622) return 'snow.svg'
-	if (id <= 781) return 'atmosphere.svg'
-	if (id <= 800) return 'clear.svg'
-
-	else return 'clouds.svg';
+function getWeatherIcon(id) {
+	if (id >= 200 && id < 300) return 'thunderstorm.svg';
+	if (id >= 300 && id < 400) return 'drizzles.svg';
+	if (id >= 500 && id < 600) return 'rain.svg';
+	if (id >= 600 && id < 700) return 'snow.svg';
+	if (id >= 700 && id < 800) return 'atmosphere.svg';
+	if (id === 800) return 'clear.svg';
+	if (id > 800 && id <= 804) return 'clouds.svg';
+	return 'default.svg';
 }
+
 
 function getCurrentdate(){
 	const date=new Date();
